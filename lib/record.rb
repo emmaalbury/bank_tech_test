@@ -7,8 +7,12 @@ class Record
     @balance = 0
   end
 
-  def update_balance
+  def balance_after_deposit
     @balance += @transaction.deposit
+  end
+
+  def balance_after_withdrawal
+    @balance -= @transaction.withdraw
   end
 
 end

@@ -4,9 +4,9 @@ describe Record do
 
   let(:record) { Record.new(Transaction.new) }
 
-  describe '#update_balance' do
+  describe '#balance_after_deposit' do
     it 'returns the current balance of your funds' do
-    expect(record.update_balance).to eq(500)
+    expect(record.balance_after_deposit).to eq(500)
     end
   end
 end
