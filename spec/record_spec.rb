@@ -2,11 +2,11 @@ require 'record'
 
 describe Record do
 
-  let(:record) { Record.new}
+  let(:record) { Record.new(Transaction.new) }
 
-  describe '#balance' do
+  describe '#update_balance' do
     it 'returns the current balance of your funds' do
-    expect(record.balance).to eq(500)
+    expect(record.update_balance).to eq(500)
     end
   end
 end
