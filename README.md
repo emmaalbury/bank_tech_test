@@ -6,9 +6,10 @@ To install:
 run this command -
 bundle install
 
-Testing:
+To run tests:
 run these commands -
 rspec
+
 rubocop
 
 To run the program:
@@ -17,7 +18,8 @@ run these commands -
 * irb
 * require './lib/run_program'
 * run = run_program
-* call chosen method on run variable i.e run.balance_after_deposit
+* call chosen method on run variable i.e to make a deposit and see the balance run.balance_after_deposit, to make a withdrawal and see the balance
+run.balance_after_withdrawal or to print a statement run.print_statement
 * control z to close session
 
 SPECIFICATION:
