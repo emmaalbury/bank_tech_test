@@ -1,8 +1,6 @@
 require_relative 'record'
-require_relative 'transaction'
 
 def run_program
-  transaction = Transaction.new
-  record = Record.new(transaction)
+  record = Record.new
   return record
 end

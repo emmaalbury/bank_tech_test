@@ -16,11 +16,4 @@ describe Transaction do
       expect(transaction.withdraw).to eq 250
     end
   end
-
-  describe '#date' do
-    it 'returns date of transaction' do
-      allow(transaction).to receive(:date).and_return('10/03/88')
-      expect(transaction.date).to eq '10/03/88'
-    end
-  end
 end
