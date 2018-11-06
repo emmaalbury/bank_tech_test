@@ -4,7 +4,7 @@ HOW TO USE THIS PROGRAM:
 
 run these commands -
 
-* IRB
+* irb
 * require './lib/run_program'
 * run = run_program
 * call chosen method on run variable i.e run.balance_after_deposit

@@ -12,6 +12,7 @@ class Transaction
   def withdraw
     puts 'What amount would you like to withdraw?'
     withdraw = gets.chomp.to_i
+    @statement << { :date => date, :debit => withdraw }
   end
 
   def date
