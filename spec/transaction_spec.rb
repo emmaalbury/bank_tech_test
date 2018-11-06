@@ -11,10 +11,11 @@ describe Transaction do
     end
   end
 
-  # describe '#withdraw' do
-  #   it 'debits the funds withrawn in each transaction' do
-  #     expect(transaction.withdraw).to eq (250)
-  #   end
-  # end
+  describe '#withdraw' do
+    it 'debits the funds withrawn in each transaction' do
+      allow(transaction).to receive(:withdraw).and_return(250)
+      expect(transaction.withdraw).to eq (250)
+    end
+  end
 
 end
