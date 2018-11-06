@@ -2,6 +2,16 @@
 
 HOW TO USE THIS PROGRAM:
 
+To install:
+run this command -
+bundle install
+
+Testing:
+run these commands -
+rspec
+rubocop
+
+To run the program:
 run these commands -
 
 * irb
