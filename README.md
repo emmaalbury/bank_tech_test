@@ -3,8 +3,11 @@
 HOW TO USE THIS PROGRAM:
 
 To install:
-run this command -
-bundle install
+
+* Fork this repo
+* Clone it in terminal
+* cd into the local repo
+* run the command bundle install
 
 To run tests:
 run these commands -
@@ -13,6 +16,7 @@ rspec
 rubocop
 
 To run the program:
+
 run these commands -
 
 * irb
