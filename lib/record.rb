@@ -23,10 +23,10 @@ class Record
 
   def update_statement(transaction_type, transaction_amount)
     if transaction_type == 'withdraw'
-      @statement << { :date => date, :credit => "   ", :debit => transaction_amount,
+      @statement << { :date => date, :credit => nil, :debit => transaction_amount,
       :balance => @balance }
     else
-      @statement << { :date => date, :credit => transaction_amount, :debit => "   ",
+      @statement << { :date => date, :credit => transaction_amount, :debit => nil,
       :balance => @balance }
     end
     return @statement[-1]
@@ -39,11 +39,11 @@ class Record
   end
 
   def print_statement
-    puts 'date     || credit || debit  || balance'
+    puts 'date || credit || debit || balance'
     @statement.each do |transaction|
-      printed_transaction = transaction[:date] + ' ||  '
-      printed_transaction += transaction[:credit].to_s + '   ||  '
-      printed_transaction += transaction[:debit].to_s + '   ||   '
+      printed_transaction = transaction[:date] + ' || '
+      printed_transaction += transaction[:credit].to_s + ' || '
+      printed_transaction += transaction[:debit].to_s + ' || '
       printed_transaction += transaction[:balance].to_s
       puts printed_transaction
     end
