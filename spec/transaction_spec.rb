@@ -5,14 +5,14 @@ describe Transaction do
 
   describe '#deposit' do
     it 'stores the funds deposited in each transaction' do
-      allow(transaction).to receive(:deposit).and_return(500)
+      allow($stdin).to receive(:gets).and_return( '500' )
       expect(transaction.deposit).to eq 500
     end
   end
 
   describe '#withdraw' do
     it 'debits the funds withrawn in each transaction' do
-      allow(transaction).to receive(:withdraw).and_return(250)
+      allow($stdin).to receive(:gets).and_return( '250' )
       expect(transaction.withdraw).to eq 250
     end
   end
