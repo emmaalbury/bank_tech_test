@@ -63,3 +63,17 @@ so that I can have a record of my transactions and balance.
 As a client,
 I can have a record of my transactions saved,
 so that I can access my history.
+
+Additional features:
+
+As a customer of the bank
+So that I can borrow money temporarily
+I can agree a fixed overdraft limit and apply it to my account
+
+As a customer of the bank
+So that I have a safety net in case of emergency
+I can borrow up to £100 above my overdraft limit
+
+As a bank
+So that customers are discouraged from borrowing above their agreed limit
+They are automatically charged £25 when a transaction takes them above their agreed overdraft
