@@ -22,6 +22,18 @@ describe Record do
     end
   end
 
+  describe '#update_statement' do
+    it 'returns the last statement entry' do
+      allow(record).to receive(:date).and_return('10/03/88')
+      expect(record.update_statement('withdraw', '900')).to eq ({:date=>"10/03/88", :credit=>nil, :debit=>"900", :balance=>0})
+    end
+
+    it 'returns the last statement entry' do
+      allow(record).to receive(:date).and_return('11/02/81')
+      expect(record.update_statement('deposit', '200')).to eq ({:date=>"11/02/81", :credit=>"200", :debit=>nil, :balance=>0})
+    end
+  end
+
   describe '#print_statement' do
     it 'prints out statement' do
       allow(record).to receive(:date).and_return('06/11/79')
@@ -32,7 +44,3 @@ describe Record do
     end
   end
 end
-
-# allow(record).to receive_message_chain({}, {}, {}, {}).with(:date),
-# .with(:credit).with(:debit).with(:balance).and_return([{ :date => '06/11/79'},
-#   { :credit => '06/11/79'}, { :debit => '06/11/79'}, { :balance => '06/11/79'}])
