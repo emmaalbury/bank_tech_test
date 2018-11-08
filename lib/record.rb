@@ -6,30 +6,30 @@ class Record
   def initialize
     @transaction = Transaction.new
     @balance = 0
-    @statement = []
+    @history = []
   end
 
   def balance_after_deposit
     deposit = @transaction.deposit
     @balance += deposit
-    update_statement('deposit', deposit)
+    add_to_history('deposit', deposit)
   end
 
   def balance_after_withdrawal
     withdraw = @transaction.withdraw
     @balance -= withdraw
-    update_statement('withdraw', withdraw)
+    add_to_history('withdraw', withdraw)
   end
 
-  def update_statement(transaction_type, transaction_amount)
+  def add_to_history(transaction_type, transaction_amount)
     if transaction_type == 'withdraw'
-      @statement << { :date => date, :credit => nil, :debit => transaction_amount,
+      @history << { :date => date, :credit => nil, :debit => transaction_amount,
       :balance => @balance }
     else
-      @statement << { :date => date, :credit => transaction_amount, :debit => nil,
+      @history << { :date => date, :credit => transaction_amount, :debit => nil,
       :balance => @balance }
     end
-    return @statement[-1]
+    return @history[-1]
   end
 
   def date
@@ -40,7 +40,7 @@ class Record
 
   def print_statement
     puts 'date || credit || debit || balance'
-    @statement.each do |transaction|
+    @history.each do |transaction|
       printed_transaction = "#{transaction[:date].to_s}" + " || " + \
       "#{transaction[:credit].to_s}" + " || " + "#{transaction[:debit].to_s}" \
       + " || " + "#{transaction[:balance].to_s}"

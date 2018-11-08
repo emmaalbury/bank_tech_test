@@ -22,15 +22,15 @@ describe Record do
     end
   end
 
-  describe '#update_statement' do
-    it 'returns the last statement entry' do
+  describe '#add_to_history' do
+    it 'returns the last withdraw transaction' do
       allow(record).to receive(:date).and_return('10/03/88')
-      expect(record.update_statement('withdraw', '900')).to eq ({:date=>"10/03/88", :credit=>nil, :debit=>"900", :balance=>0})
+      expect(record.add_to_history('withdraw', '900')).to eq ({:date=>"10/03/88", :credit=>nil, :debit=>"900", :balance=>0})
     end
 
-    it 'returns the last statement entry' do
+    it 'returns the last deposit transaction' do
       allow(record).to receive(:date).and_return('11/02/81')
-      expect(record.update_statement('deposit', '200')).to eq ({:date=>"11/02/81", :credit=>"200", :debit=>nil, :balance=>0})
+      expect(record.add_to_history('deposit', '200')).to eq ({:date=>"11/02/81", :credit=>"200", :debit=>nil, :balance=>0})
     end
   end
 
