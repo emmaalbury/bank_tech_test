@@ -41,10 +41,9 @@ class Record
   def print_statement
     puts 'date || credit || debit || balance'
     @statement.each do |transaction|
-      printed_transaction = transaction[:date] + ' || '
-      printed_transaction += transaction[:credit].to_s + ' || '
-      printed_transaction += transaction[:debit].to_s + ' || '
-      printed_transaction += transaction[:balance].to_s
+      printed_transaction = "#{transaction[:date].to_s}" + " || " + \
+      "#{transaction[:credit].to_s}" + " || " + "#{transaction[:debit].to_s}" \
+      + " || " + "#{transaction[:balance].to_s}"
       puts printed_transaction
     end
   end
