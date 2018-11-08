@@ -34,6 +34,14 @@ describe Record do
     end
   end
 
+  describe '#date' do
+    it 'returns date of transaction' do
+      time = Time.parse("Feb 11 1981")
+      expect(Time).to receive(:now).and_return(time)
+      expect(record.date).to eq('11/02/81')
+    end
+  end
+
   describe '#print_statement' do
     it 'prints out statement' do
       allow(record).to receive(:date).and_return('06/11/79')
