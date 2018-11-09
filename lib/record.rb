@@ -9,10 +9,9 @@ class Record
     @history = []
   end
 
-  def balance_after_deposit
-    deposit = @transaction.deposit
-    @balance += deposit
-    add_to_history('deposit', deposit)
+  def deposit(amount)
+    @balance += amount
+    add_to_history('deposit', amount)
   end
 
   def balance_after_withdrawal

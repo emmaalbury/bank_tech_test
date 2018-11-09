@@ -5,11 +5,10 @@ describe Record do
   let(:transaction) { double :transaction }
   subject(:record) { described_class.new }
 
-  describe '#balance_after_deposit' do
+  describe '#deposit' do
     it 'returns the current balance of your funds' do
-      allow($stdin).to receive(:gets).and_return( '500' )
       allow(record).to receive(:date).and_return('11/02/81')
-      expect(record.balance_after_deposit).to eq ({:date=>"11/02/81",
+      expect(record.deposit(500)).to eq ({:date=>"11/02/81",
       :credit=>500, :debit=>nil, :balance=>500,})
     end
   end
