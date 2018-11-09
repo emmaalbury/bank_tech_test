@@ -11,13 +11,16 @@ describe Record do
       expect(record.deposit(500)).to eq ({:date=>"11/02/81",
       :credit=>500, :debit=>nil, :balance=>500,})
     end
+
+    it 'throws error if deposit is a negative number' do
+      expect{ record.deposit(-300) }.to raise_error('Please enter a positive amount')
+    end
   end
 
-  describe '#balance_after_withdrawal' do
+  describe '#withdraw' do
     it 'returns the current balance of your funds' do
-      allow($stdin).to receive(:gets).and_return( '250' )
       allow(record).to receive(:date).and_return('10/11/79')
-      expect(record.balance_after_withdrawal).to eq ({:date=>"10/11/79",
+      expect(record.withdraw(250)).to eq ({:date=>"10/11/79",
       :credit=>nil, :debit=>250, :balance=>-250})
     end
   end

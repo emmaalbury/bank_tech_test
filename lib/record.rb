@@ -10,14 +10,17 @@ class Record
   end
 
   def deposit(amount)
-    @balance += amount
-    add_to_history('deposit', amount)
+    if amount < 0
+      raise 'Please enter a positive amount'
+    else
+      @balance += amount
+      add_to_history('deposit', amount)
+    end
   end
 
-  def balance_after_withdrawal
-    withdraw = @transaction.withdraw
-    @balance -= withdraw
-    add_to_history('withdraw', withdraw)
+  def withdraw(amount)
+    @balance -= amount
+    add_to_history('withdraw', amount)
   end
 
   def add_to_history(transaction_type, transaction_amount)
