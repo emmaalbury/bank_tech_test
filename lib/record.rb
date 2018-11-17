@@ -1,10 +1,7 @@
-require_relative 'transaction'
-
 class Record
   attr_reader :balance
 
   def initialize
-    @transaction = Transaction.new
     @balance = 0
     @history = []
   end
@@ -21,7 +18,7 @@ class Record
   def withdraw(amount)
     if amount < 0
       raise 'Please enter a positive amount'
-    else 
+    else
       @balance -= amount
       add_to_history('withdraw', amount)
     end
@@ -46,7 +43,7 @@ class Record
 
   def print_statement
     puts 'date || credit || debit || balance'
-    @history.each do |transaction|
+    @history.reverse_each do |transaction|
       printed_transaction = "#{transaction[:date].to_s}" + " || " + \
       "#{transaction[:credit].to_s}" + " || " + "#{transaction[:debit].to_s}" \
       + " || " + "#{transaction[:balance].to_s}"

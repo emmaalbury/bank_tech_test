@@ -2,7 +2,6 @@ require 'record'
 
 describe Record do
 
-  let(:transaction) { double :transaction }
   subject(:record) { described_class.new }
 
   describe '#deposit' do
