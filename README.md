@@ -16,15 +16,13 @@ run these commands -
 * irb
 * require './lib/run_program'
 * run = run_program
-* call chosen method on run variable i.e to make a deposit and see the balance run.balance_after_deposit, to make a withdrawal and see the balance
-run.balance_after_withdrawal or to print a statement run.print_statement
+* call chosen method on run variable i.e to make a deposit run.deposit(300), to make a withdrawal
+run.withdraw(90) or to print a statement run.print_statement.
 * control z to close session
 
 To run tests:
 run these commands -
 rspec
-
-rubocop
 
 SPECIFICATION:
 
@@ -63,17 +61,3 @@ so that I can have a record of my transactions and balance.
 As a client,
 I can have a record of my transactions saved,
 so that I can access my history.
-
-Additional features:
-
-As a customer of the bank
-So that I can borrow money temporarily
-I can agree a fixed overdraft limit and apply it to my account
-
-As a customer of the bank
-So that I have a safety net in case of emergency
-I can borrow up to £100 above my overdraft limit
-
-As a bank
-So that customers are discouraged from borrowing above their agreed limit
-They are automatically charged £25 when a transaction takes them above their agreed overdraft
