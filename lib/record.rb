@@ -1,27 +1,13 @@
 class Record
-  attr_reader :balance
+  attr_reader :history
 
   def initialize
-    @balance = 0
     @history = []
+    @balance = 0
   end
 
-  def deposit(amount)
-    if amount < 0
-      raise 'Please enter a positive amount'
-    else
-      @balance += amount
-      add_to_history('deposit', amount)
-    end
-  end
-
-  def withdraw(amount)
-    if amount < 0
-      raise 'Please enter a positive amount'
-    else
-      @balance -= amount
-      add_to_history('withdraw', amount)
-    end
+  def update_balance(amount)
+    @balance += amount
   end
 
   def add_to_history(transaction_type, transaction_amount)
@@ -39,15 +25,5 @@ class Record
     t = Time.now
     date = t.strftime('%d/%m/%y')
     return date
-  end
-
-  def print_statement
-    puts 'date || credit || debit || balance'
-    @history.reverse_each do |transaction|
-      printed_transaction = "#{transaction[:date].to_s}" + " || " + \
-      "#{transaction[:credit].to_s}" + " || " + "#{transaction[:debit].to_s}" \
-      + " || " + "#{transaction[:balance].to_s}"
-      puts printed_transaction
-    end
   end
 end
