@@ -1,6 +1,6 @@
 # Bank App #
 
-A REPL bank app with which users can make financial deposits, withdrawals, see their balance and print a statement. 
+A REPL bank program with which users can make financial deposits, withdrawals, see their balance and print a statement. 
 
 ### To install: ###
 
