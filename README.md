@@ -1,6 +1,6 @@
 # Bank App #
 
-A REPL bank app with which users can make financial deposits, withdrawals, check their balance and print a statement. 
+A REPL bank app with which users can make financial deposits, withdrawals, see their balance and print a statement. 
 
 ### To install: ###
 
@@ -14,10 +14,14 @@ A REPL bank app with which users can make financial deposits, withdrawals, check
 Enter in the command line:
 
 * irb
-* require './lib/run_program'
-* run = run_program
-* call chosen method on run variable i.e to make a deposit run.deposit(300), to make a withdrawal
-run.withdraw(90) or to print a statement run.print_statement.
+* require './lib/transactions.rb'
+* transaction = Transaction.new
+* to make a deposit -
+transaction.deposit(chosen amount)
+* to make a withdrawal -
+transaction.withdrawal(chosen amount)
+* to print a statement -
+transaction.print_statement
 * control z to close session
 
 ### Testing: ###
