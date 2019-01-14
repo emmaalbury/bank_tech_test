@@ -1,4 +1,4 @@
-# Bank App #
+# Bank Tech Test #
 
 A REPL bank program with which users can make financial deposits, withdrawals, see their balance and print a statement. 
 
