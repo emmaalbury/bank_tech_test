@@ -1,8 +1,10 @@
+| [Set-up](#set-up) |
+
 # Bank Tech Test #
 
 A REPL bank program with which users can make financial deposits, withdrawals, see their balance and print a statement. 
 
-### To install: ###
+### <a name="set-up">**Set-up**</a>
 
 * Fork this repo
 * Clone it in terminal
