@@ -1,17 +1,17 @@
-| [Set-up](#set-up) |
+| [Set-Up](#set-up) | [Run](#to_run) | [Test](#to_test) | [Technologies](#technologies) | [Specifications](#specifications) | [Features](#features) |
 
 # Bank Tech Test #
 
 A REPL bank program with which users can make financial deposits, withdrawals, see their balance and print a statement. 
 
-### <a name="set-up">**Set-up**</a>
+### <a name="set-up">**To Set-Up**</a>
 
 * Fork this repo
 * Clone it in terminal
 * cd into the local repo
 * run the command bundle install
 
-### To run: ###
+### <a name="to_run">**To Run**</a>
 
 Enter in the command line:
 
@@ -26,17 +26,17 @@ transaction.withdrawal(chosen amount)
 transaction.print_statement
 * control z to close session
 
-### Testing: ###
+### <a name="to_test">**To Test**</a>
 
 Enter in the command line:
 
 * rspec
 
-### Technologies: ###
+### <a name="technologies">**Technologies**</a>
 
 Ruby, RSpec, Simplecov, Rubocop
 
-### Specifications: ###
+### <a name="specifications">**Specifications**</a>
 
 REQUIREMENTS:
 
@@ -59,7 +59,7 @@ date || credit || debit || balance
 13/01/2012 || 2000.00 || || 3000.00
 10/01/2012 || 1000.00 || || 1000.00
 
-### Features: ###
+### <a name="features">**Features**</a>
 
 As a client,
 I can make deposits,
