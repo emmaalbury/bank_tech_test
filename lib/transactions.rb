@@ -8,10 +8,6 @@ class Transaction
     @statement = Statement.new
   end
 
-  def print_statement
-    @statement.print(@record)
-  end
-
   def deposit(amount)
     if amount < 0
       raise 'Please enter a positive amount'
@@ -28,5 +24,9 @@ class Transaction
       @record.update_balance(0 - amount)
       @record.add_to_history('withdraw', amount)
     end
+  end
+
+  def print_statement
+    @statement.print(@record)
   end
 end
