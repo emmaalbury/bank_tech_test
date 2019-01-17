@@ -1,5 +1,6 @@
 class Record
   attr_reader :history
+  attr_accessor :balance
 
   def initialize
     @history = []
