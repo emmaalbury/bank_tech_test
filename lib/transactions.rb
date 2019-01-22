@@ -3,9 +3,9 @@ require_relative 'record'
 
 class Transaction
 
-  def initialize
-    @record = Record.new
-    @statement = Statement.new
+  def initialize(record = Record.new, statement = Statement.new)
+    @record = record
+    @statement = statement
   end
 
   def deposit(amount)
