@@ -2,7 +2,7 @@
 
 # Bank Tech Test #
 
-A REPL bank program with which users can make financial deposits, withdrawals, see their balance and print a statement. 
+A REPL bank program with which users can make financial deposits, withdrawals, see their balance and print a statement.
 
 ### <a name="set-up">**To Set-Up**</a>
 
@@ -76,3 +76,18 @@ so that I can have a record of my transactions and balance.
 As a client,
 I can have a record of my transactions saved,
 so that I can access my history.
+
+### Improvements
+
+* Encapsulation: some of these methods should be made private.
+* Refactor: The methods in the Transaction class and the add_to_history method in
+the Record class could be combined as they are currently redundant.
+The transaction type and amount could be input as arguments in the add_to_history
+method (which would then need to be more appropriately named) rather than having
+separate methods for this functionality.
+* Instances: I feel my current design choice is backwards. I currently
+have one Transaction object that I pass around when really it would make more
+sense for me to create multiple instances of Transaction (one for each action).
+Considering these objects and their relationship, it would make more sense for
+me to pass these instances into Record and Statement as opposed to me currently
+passing instances of Record and Statement into the Transaction.
